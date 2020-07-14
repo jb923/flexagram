@@ -1,0 +1,11 @@
+.commentsFeed-container {
+    width: 614px;
+    height: 88px;
+    background-color: darkolivegreen;
+}
+
+.addComments {
+    height: 56px;
+    width: 614px;
+    background-color: darkgoldenrod;
+}

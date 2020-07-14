@@ -1,0 +1,31 @@
+.main-container {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    margin: 0px auto 0px auto;
+    /* background-color: darkolivegreen; */
+    position: relative;
+    max-width: 614px;
+    width: 100%;
+}
+
+.feedUser-container {
+    background-color: brown;
+    width: 614px;
+    height: 60px;
+    margin-top: 150px;
+    /* padding: 16px; */
+    display: flex;
+    justify-content: left;
+}
+
+.feedUser__icon img {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    padding: 16px;
+}
+
+.feedUser__user {
+    padding: 16px;
+}
