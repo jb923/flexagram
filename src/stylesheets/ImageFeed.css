@@ -2,4 +2,11 @@
     background-color: cadetblue;
     height: 614px;
     width: 614px;
+    max-width: 614px;
+}
+
+img {
+    height: 614px;
+    width: 614px;
+    max-width: 614px;
 }

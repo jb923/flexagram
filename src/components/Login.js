@@ -12,13 +12,11 @@ const Login = props => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         await props.login(Loginemail, Loginpassword);
-        // window.location.reload();
     };
 
     const handleDemoUser = async (event) => {
         event.preventDefault();
         await props.login("demouser@demouser.com", "demouser");
-        // window.location.reload();
     }
 
     return (

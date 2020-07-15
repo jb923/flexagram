@@ -25,7 +25,7 @@ const Navbar = props => {
           </div>
           <div className='nav-profile'>
             <NavLink className='nav-icon' to={`/profile`}>
-              <img src='https://avatars3.githubusercontent.com/u/60685723?s=400&u=8906bc06047d2374252904e393c4acb11358be6d&v=4'/>
+              <img src='https://i.etsystatic.com/7745761/r/il/eb07f8/1384972180/il_570xN.1384972180_mly2.jpg'/>
             </NavLink>
           </div>
         </div>
