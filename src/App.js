@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
-import './stylesheets/navbar.css'
-import './stylesheets/Feed.css'
-import './stylesheets/FeedUser.css'
-import './stylesheets/ImageFeed.css'
-import './stylesheets/IconBar.css'
-import './stylesheets/CommentsFeed.css'
-import './stylesheets/Profile.css'
+
 
 import Home from "./components/Home";
 import Profile from "./components/Profile"
 import Login from "./components/Login"
+import LandingPage from './components/LandingPage';
+import Signup from './components/Signup';
 
 
 
@@ -36,9 +32,10 @@ const App = props => {
 
     return (
         <BrowserRouter>
-            <Route path="/login" component={Login}></Route>
+            <Route path="/login" component={LandingPage}></Route>
             <Route exact path="/" component={Home} />
             <Route path="/profile" component={Profile} />
+            <Route path="/signup" component={Signup} />
         </BrowserRouter>
     );
 

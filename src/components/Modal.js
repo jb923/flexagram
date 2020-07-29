@@ -1,55 +1,55 @@
-import React from "react";
-import { connect } from "react-redux";
-import { closeModal } from "../actions/modalActions";
+// import React from "react";
+// import { connect } from "react-redux";
+// import { closeModal } from "../actions/modalActions";
 
-import Signin from "./Signin";
-import Signup from "./Signup";
+// import Signin from "./Signin";
+// import Signup from "./Signup";
 
 
-const Modal = (props) => {
-  const { modal } = props;
+// const Modal = (props) => {
+//   const { modal } = props;
 
-  if (!modal) return null;
+//   if (!modal) return null;
 
-  let component;
-  switch (modal) {
-    case "signin":
-      component = <Signin type={"signin"} />;
-      break;
-    case "signup":
-      component = <Signup type={"signup"} />;
-      break;
-    default:
-      return null;
-  }
+//   let component;
+//   switch (modal) {
+//     case "signin":
+//       component = <Signin type={"signin"} />;
+//       break;
+//     case "signup":
+//       component = <Signup type={"signup"} />;
+//       break;
+//     default:
+//       return null;
+//   }
 
-  const handleBackgroundClick = (event) => {
-    props.closeModal();
-  };
+//   const handleBackgroundClick = (event) => {
+//     props.closeModal();
+//   };
 
-  const handleChildClick = (event) => {
-    event.stopPropagation();
-  };
+//   const handleChildClick = (event) => {
+//     event.stopPropagation();
+//   };
 
-  return (
-    <div onClick={handleBackgroundClick} className="modal__background">
-      <div onClick={handleChildClick} className="modal__child">
-        {component}
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div onClick={handleBackgroundClick} className="modal__background">
+//       <div onClick={handleChildClick} className="modal__child">
+//         {component}
+//       </div>
+//     </div>
+//   );
+// };
 
-const mapStateToProps = (state) => {
-  return {
-    modal: state.modal,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     modal: state.modal,
+//   };
+// };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    closeModal: () => dispatch(closeModal()),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     closeModal: () => dispatch(closeModal()),
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+// export default connect(mapStateToProps, mapDispatchToProps)(Modal);

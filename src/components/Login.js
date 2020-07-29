@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { login } from "../actions/sessionActions";
 
 const Login = props => {
@@ -21,13 +22,16 @@ const Login = props => {
 
     return (
         <>
-            <div className="Login__header">Welcome back!</div>
-            <form className="form__container">
-                <input type="email" onChange={updateEmail} className="form__input" value={Loginemail} placeholder="Email address" />
-                <input type="password" onChange={updatePassword} className="form__input" value={Loginpassword} placeholder="Password" />
-                <button className="form__button" onClick={handleSubmit}>Log In</button>
-                <button className="demo__button" onClick={handleDemoUser}>Demo User</button>
-            </form>
+            <div className="login__container">
+                <div className="login__header">Flexagram</div>
+                <form className="form__container">
+                    <input type="email" onChange={updateEmail} className="form__input" value={Loginemail} placeholder="Email address" />
+                    <input type="password" onChange={updatePassword} className="form__input" value={Loginpassword} placeholder="Password" />
+                    <button className="login__buttons form__button" onClick={handleSubmit}>Log In</button>
+                    <button className="login__buttons demo__button" onClick={handleDemoUser}>Demo User</button>
+                </form>
+                <NavLink to="/signup" className="login__signup">Don't have an account?</NavLink>
+            </div>
         </>
     );
 }

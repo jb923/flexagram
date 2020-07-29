@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { NavLink } from 'react-router-dom';
-import { FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaRegQuestionCircle } from 'react-icons/fa';
 import { IoMdHome } from 'react-icons/io';
 import Searchbar from './Searchbar'
 
@@ -11,10 +11,12 @@ const Navbar = props => {
     return (
       <section className='nav-bar-container'>
         <div className='nav-left'>
-        <NavLink className='nav-link-logo' to={`/`}>
-          <FaInstagram/>Flexagram</NavLink>
+        <NavLink className='nav-link-icon' to={`/`}>
+          <img src={require("../assets/icon.jpeg")} />
+        </NavLink>
+        <NavLink className='nav-link-logo' to='/'>Flexagram</NavLink>
         </div>
-        <div classNmae='nav-middle'>
+        <div className='nav-middle'>
             {/* <Searchbar /> */}
         </div>
         <div className='nav-right'>

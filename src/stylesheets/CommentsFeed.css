@@ -1,11 +1,32 @@
 .commentsFeed-container {
     width: 614px;
-    height: 88px;
+    height: 102px;
     background-color: darkolivegreen;
+}
+
+.commentsFeed__comments {
+    width: 582px;
+    max-height: 36px;
+    padding: 0px 16px;
+    
 }
 
 .addComments {
     height: 56px;
     width: 614px;
-    background-color: darkgoldenrod;
+    margin: 4px 0px 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.form__comment {
+    width: 551.66px;
+    padding: 0px 16px;
+    border: none;
+}
+
+.post__button {
+    color: #0095F6;
+    border: none;
+    background-color: #ffffff;;
 }

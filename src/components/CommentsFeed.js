@@ -9,8 +9,8 @@ const CommentsFeed = props => {
             <div className='commentsFeed-container'>
                 <div className='commentsFeed__comments'>comment1</div>
             </div>
-            <form className='addComments'>form
-                <input type='comment' className='form__comment' placeholder="comment"/>
+            <form className='addComments'>
+                <input type='text' className='form__comment' placeholder="Add a comment..."/>
                 <button className='post__button'>Post</button>
             </form>
         </>

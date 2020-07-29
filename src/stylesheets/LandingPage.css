@@ -1,0 +1,73 @@
+.landing__page {
+    /* width: 100vw;
+    height: 100vh; */
+    overflow: hidden;
+    /* background-image: url("https://i.pinimg.com/originals/ef/99/2c/ef992cfd13430bdfe7006768277af016.png"); */
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* align-self: center; */
+}
+
+.login__image {
+    width: 454px;
+    height: 618px;
+}
+
+.login__container {
+    width: 350px;
+    height: 339px;
+    background-color: #FFFFFF;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    text-align: center;
+}
+
+.login__header {
+    width: 175px;
+    height: 51px;
+    color: #262626;
+    margin: 22px 86px 12px;
+    font-size: 28px;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form__input {
+    width: 258px;
+    height: 24px;
+    background-color: #FAFAFA;
+    padding: 9px 0px 7px 8px;
+    align-self: center;
+    margin: 8px 40px;
+    font-size: 16px;
+    border: 1px solid #e8f0fe;
+    border-radius: 8px;
+}
+
+.login__buttons {
+    width: 268px;
+    height: 30px;
+    margin: 8px 40px;
+    background-color: #0095F6;
+    border: none;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.login__signup {
+    text-decoration: none;
+    padding: 12px;
+    color: #0095F6;   
+}
