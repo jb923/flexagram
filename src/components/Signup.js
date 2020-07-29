@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-
+import { NavLink } from "react-router-dom";
 import { createUser } from "../actions/sessionActions";
 import { closeModal } from "../actions/modalActions";
 
@@ -28,19 +28,21 @@ const Signup = props => {
     };
 
     return (
-        <>
-            <div className="modal__header">Become a member</div>
+        <div className="signup__container">
+            <div className="signup__header">Flexagram</div>
+            <p className="signup__p">Sign up to flex on your friends.....or your enemies.</p>
             <form className="form__container" onSubmit={handleSubmit}>
                 <div className="form__input-name-container">
-                    <input type="text" onChange={updateFirstName} value={firstName} className="form__input--firstname" placeholder="First name" />
-                    <input type="text" onChange={updateLastName} value={lastName} className="form__input--lastname" placeholder="Last name" />
+                    <input type="text" onChange={updateFirstName} value={firstName} className="form__input" placeholder="Full Name" />
+                    {/* <input type="text" onChange={updateLastName} value={lastName} className="form__input" placeholder="Last name" /> */}
                 </div>
                 <input type="email" onChange={updateEmail} value={email} className="form__input" placeholder="Email address" />
                 <input type="password" onChange={updatePassword} value={password} className="form__input" placeholder="Create a password" />
                 <input type="password" onChange={updateConfirmPassword} value={confirmPassword} className="form__input" placeholder="Confirm password" />
                 <button className="signupform__button">Join Flexagram</button>
+                <NavLink to='/login' className="signup__login">already flexing on them?</NavLink>
             </form>
-        </>
+        </div>
     );
 }
 

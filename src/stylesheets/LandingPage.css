@@ -71,3 +71,48 @@
     padding: 12px;
     color: #0095F6;   
 }
+
+.signup__container {
+    width: 350px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 100px auto 0px auto;
+    background-color: #ffffff;
+    padding: 16px;
+}
+
+.signup__header {
+    width: 175px;
+    height: 51px;
+    color: #262626;
+    margin: 12px auto;
+    font-size: 28px;
+}
+
+.signup__p {
+    width: 290px;
+    font-size: 20px;
+    overflow-wrap: normal;
+    margin: 12px auto;
+    color: #8E8E8E;
+}
+
+.signupform__button {
+    width: 268px;
+    height: 30px;
+    margin: 10px auto;
+    background-color: #0095F6;
+    border: none;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.signup__login {
+    text-decoration: none;
+    padding: 12px;
+    color: #0095F6;   
+}
