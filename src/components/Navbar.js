@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import { FaInstagram, FaRegQuestionCircle } from 'react-icons/fa';
 import { IoMdHome } from 'react-icons/io';
+import { FiPlusSquare } from 'react-icons/fi';
 import Searchbar from './Searchbar'
 
 
@@ -29,6 +30,7 @@ const Navbar = props => {
             <NavLink className='nav-icon' to={`/profile`}>
               <img src='https://i.etsystatic.com/7745761/r/il/eb07f8/1384972180/il_570xN.1384972180_mly2.jpg'/>
             </NavLink>
+            <NavLink to='/upload'><FiPlusSquare className='nav__upload'/></NavLink>
           </div>
         </div>
       </section>

@@ -43,7 +43,7 @@
 }
 
 .nav-home {
-    padding-right: 20px;
+    padding: 4px;
 }
 
 .nav-icon {
@@ -55,4 +55,12 @@
     border-radius: 50%;
     height: 36px;
     width: 36px;
+    padding: 4px;
+}
+
+.nav__upload {
+    height: 32px;
+    width: 32px;
+    padding: 4px;
+    color: black;
 }

@@ -4,15 +4,17 @@ import { NavLink } from "react-router-dom";
 import { login } from "../actions/sessionActions";
 
 const Login = props => {
-    const [Loginemail, setLoginEmail] = useState("");
-    const [Loginpassword, setLoginPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    // const [error, setError] = useState("");
+    // const [open, setOpen] = useState(false);
 
-    const updateEmail = (event) => setLoginEmail(event.target.value);
-    const updatePassword = (event) => setLoginPassword(event.target.value);
+    const updateEmail = (event) => setEmail(event.target.value);
+    const updatePassword = (event) => setPassword(event.target.value);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await props.login(Loginemail, Loginpassword);
+        await props.login(email, password);
     };
 
     const handleDemoUser = async (event) => {
@@ -25,8 +27,8 @@ const Login = props => {
             <div className="login__container">
                 <div className="login__header">Flexagram</div>
                 <form className="form__container">
-                    <input type="email" onChange={updateEmail} className="form__input" value={Loginemail} placeholder="Email address" />
-                    <input type="password" onChange={updatePassword} className="form__input" value={Loginpassword} placeholder="Password" />
+                    <input type="email" onChange={updateEmail} className="form__input" value={email} placeholder="Email address" />
+                    <input type="password" onChange={updatePassword} className="form__input" value={password} placeholder="Password" />
                     <button className="login__buttons form__button" onClick={handleSubmit}>Log In</button>
                     <button className="login__buttons demo__button" onClick={handleDemoUser}>Demo User</button>
                 </form>

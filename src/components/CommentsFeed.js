@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommentsFeed = props => {
 
-    // const handlePost = async (event) => {}
+
 
     return (
         <>
