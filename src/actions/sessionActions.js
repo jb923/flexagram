@@ -54,7 +54,7 @@ export const login = (email, password) => async dispatch => {
         window.localStorage.setItem("flexagram/authentication/USER_ID", payload.user.id);
         window.localStorage.setItem("flexagram/authentication/name", payload.user.name);
         window.localStorage.setItem("flexagram/authentication/username", payload.user.username);
-        window.localStorage.setItem("elbows/authentication/profileimgurl", payload.user.profileimgurl);
+        window.localStorage.setItem("flexagram/authentication/profileimgurl", payload.user.profileimgurl);
         dispatch(setToken({ token: payload.access_token, user: payload.user.id, name: payload.user.name, username: payload.user.username, profileimgurl: payload.user.profileimgurl }));
     }
 };
