@@ -46,7 +46,6 @@ const Home = (props) => {
         <>
             <Navbar/>
             <div className='main-container'>
-                {/* <Post postData={postData} {...props} /> */}
                 <FeedUser />
                 <ImageFeed />
                 <IconBar />
