@@ -26,7 +26,7 @@ export const createUser = (name, email, password, username, bio, profileimgurl) 
     const response = await fetch(`${baseUrl}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, username, password }),
+        body: JSON.stringify({ name, email, username, password}),
     });
 
     if (response.ok) {
@@ -47,7 +47,6 @@ export const login = (email, password) => async dispatch => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
     });
-
     if (response.ok) {
         const payload = await response.json();
         window.localStorage.setItem(TOKEN_KEY, payload.access_token);
@@ -55,6 +54,7 @@ export const login = (email, password) => async dispatch => {
         window.localStorage.setItem("flexagram/authentication/name", payload.user.name);
         window.localStorage.setItem("flexagram/authentication/username", payload.user.username);
         window.localStorage.setItem("flexagram/authentication/profileimgurl", payload.user.profileimgurl);
+        window.localStorage.setItem("flexagram/authentication/bio", payload.user.bio ? payload.user.bio : "");
         dispatch(setToken({ token: payload.access_token, user: payload.user.id, name: payload.user.name, username: payload.user.username, profileimgurl: payload.user.profileimgurl }));
     }
 };

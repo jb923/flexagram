@@ -1,20 +1,18 @@
-// import React from 'react';
+import React from 'react';
 // import FeedUser from './Feeduser';
 // import ImageFeed from './ImageFeed';
 // import IconBar from './IconBar';
 // import CommentsFeed from './CommentsFeed';
 
-// const Feed = props => {
+const Feed = props => {
+    const userId = window.localStorage.getItem("flexagram/authentication/USER_ID")
 
 
-//     return (
-//         <div className ="feedContainer">
-//             <FeedUser />
-//             <ImageFeed />
-//             <IconBar />
-//             <CommentsFeed />
-//         </div>
-//     )
-// }
+    return (
+        <div className ="feedContainer">
+            
+        </div>
+    )
+}
 
-// export default Feed;
+export default Feed;

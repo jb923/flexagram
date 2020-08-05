@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { createUser } from "../actions/sessionActions";
-import { closeModal } from "../actions/modalActions";
+
 
 const Signup = props => {
     const [email, setEmail] = useState("");
@@ -10,8 +10,7 @@ const Signup = props => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    // const [error, setError] = useState("");
-    // const [open, setOpen] = useState(false);
+
 
     const updateEmail = (event) => setEmail(event.target.value);
     const updateName = (event) => setName(event.target.value);

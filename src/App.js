@@ -32,8 +32,8 @@ const App = props => {
 
     return (
         <BrowserRouter>
-            <Route path="/login" component={LandingPage}></Route>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={LandingPage}></Route>
+            <Route path="/home" component={Home} />
             <Route path="/profile" component={Profile} />
             <Route path="/signup" component={Signup} />
         </BrowserRouter>

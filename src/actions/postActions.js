@@ -16,7 +16,7 @@ export const fetchPosts = () => async (dispatch) => {
 }
 
 export const fetchFeedPosts = (userId) => async (dispatch) => {
-    const response = await fetch(`${baseUrl}/api/${userId}`);
+    const response = await fetch(`${baseUrl}/api/home/${userId}`);
 
     if (response.ok) {
         const list = await response.json();

@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { login } from "../actions/sessionActions";
 
+import { baseUrl } from "../config";
+
 const Login = props => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const [error, setError] = useState("");
-    // const [open, setOpen] = useState(false);
+
 
     const updateEmail = (event) => setEmail(event.target.value);
     const updatePassword = (event) => setPassword(event.target.value);
@@ -15,12 +16,15 @@ const Login = props => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         await props.login(email, password);
+        props.history.push("/");
     };
 
     const handleDemoUser = async (event) => {
         event.preventDefault();
         await props.login("demouser@demouser.com", "demouser");
+        props.history.push("/home")
     }
+
 
     return (
         <>
