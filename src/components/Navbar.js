@@ -12,17 +12,17 @@ const Navbar = props => {
     return (
       <section className='nav-bar-container'>
         <div className='nav-left'>
-        <NavLink className='nav-link-icon' to={`/`}>
+        {/* <NavLink className='nav-link-icon' to={`/`}>
           <img src={require("../assets/icon.jpeg")} />
-        </NavLink>
-        <NavLink className='nav-link-logo' to='/'>Flexagram</NavLink>
+        </NavLink> */}
+        <NavLink className='nav-link-logo' to='/home'>Flexagram</NavLink>
         </div>
         <div className='nav-middle'>
             {/* <Searchbar /> */}
         </div>
         <div className='nav-right'>
           <div className='nav-home'>
-            <NavLink className='nav-icon' to={'/'}>
+            <NavLink className='nav-icon' to={'/home'}>
               <IoMdHome />
             </NavLink>
           </div>
