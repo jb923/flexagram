@@ -5,7 +5,7 @@ import { login } from "../actions/sessionActions";
 
 import { baseUrl } from "../config";
 
-const Login = props => {
+const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -42,7 +42,7 @@ const Login = props => {
     );
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
         login: (email, password) => dispatch(login(email, password)),
     }

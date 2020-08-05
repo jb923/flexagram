@@ -8,6 +8,7 @@ import Profile from "./components/Profile"
 import Login from "./components/Login"
 import LandingPage from './components/LandingPage';
 import Signup from './components/Signup';
+import Post from './components/Post';
 
 
 
@@ -36,6 +37,7 @@ const App = props => {
             <Route path="/home" component={Home} />
             <Route path="/profile" component={Profile} />
             <Route path="/signup" component={Signup} />
+            {/* <Route path="/Post/:postId" component={Post} /> */}
         </BrowserRouter>
     );
 
