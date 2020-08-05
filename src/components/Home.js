@@ -2,9 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { connect } from "react-redux";
 
 import Navbar from './Navbar';
-import FeedUser from './Feeduser';
-import ImageFeed from './ImageFeed';
-import IconBar from './IconBar';
 import CommentsFeed from './CommentsFeed';
 import Footer from "./Footer";
 
@@ -18,7 +15,7 @@ import { baseUrl } from "../config";
 
 const Home = (props) => {
     const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
-    const [FeedData, setFeedData] = useState("");
+    const [feedData, setfeedData] = useState("");
 
 
     useEffect(() => {
@@ -30,12 +27,12 @@ const Home = (props) => {
             (async () => {
                 const res = await fetch(`${baseUrl}/api/home/${userId}`);
                 const data = await res.json();
-                setFeedData(data);
+                setfeedData(data);
             })();
         }
     }, [userId]);
 
-    useEffect(() => {
+    useEffect(() => {   
         (async () => {
             await props.fetchPosts();
         })();
@@ -45,12 +42,7 @@ const Home = (props) => {
     return (
         <>
             <Navbar/>
-            <div className='main-container'>
-                <FeedUser />
-                <ImageFeed />
-                <IconBar />
-                <CommentsFeed />
-            </div>
+            <Feed feedData={feedData} {...props}/>
             <Footer />
         </>
     )

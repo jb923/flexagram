@@ -1,8 +1,77 @@
-/* .feedContainer {
-    background-color: blueviolet;
-    height: 700px;
-    width: 614px;
+.feedArr--container {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    margin: 0px auto 0px auto;
+    position: relative;
+    max-width: 614px;
+    width: 100%;
     margin-top: 100px;
+}
+
+.feed__container {
+    margin-bottom: 50px;
+    border: 1px solid lightgray;
+}
+
+.feed__user--container {
+    background-color: #ffffff;
+    width: 612px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.feedUser__icon img {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    padding: 16px;
+    align-items: center;
+}
+
+.feedUser__user {
+    padding: 16px;
     align-items: center;
     align-self: center;
-} */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.image-container {
+    height: 614px;
+    width: 614px;
+    max-width: 612px;
+}
+
+img {
+    height: 614px;
+    width: 614px;
+    max-width: 612px;
+}
+
+.icon-container {
+    width: 612px;
+    height: 40px;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    margin: 4px 0px 0px;
+    background-color: #FFFFFF;
+    align-items: center;
+}
+
+.icon__heart {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    margin-top: 12px;
+}
+
+.icon__heart--icon {
+    color: red;
+}
+
+

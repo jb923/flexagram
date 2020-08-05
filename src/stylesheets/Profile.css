@@ -1,6 +1,5 @@
 .profile__info--outer {
-    /* background-color: darkorchid; */
-    margin-top: 100px;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -9,6 +8,9 @@
     padding: 16px;
     text-align: center;
     /* border: 1px solid black; */
+    width: 935px;
+    margin: 0 auto 0 auto;
+    margin-top: 100px;
 }
 
 .profile__main--contianer {
@@ -75,9 +77,60 @@
     /* text-align: left; */
 
 }
+.profile__posts--outer {
+    max-width: 935px;
+    margin: 0 auto 0 auto;
+}
 
 .profile__posts--container {
-    display: flex;
-    justify-content: center;
-    background-color: darkslategray;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 24px;
+    position: relative;
+    margin: 0 auto 0 auto;
+    margin-top: 20px;
+    margin-left: -10px;
 }
+
+.profile__post {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow-wrap: normal;
+    padding: 8px;
+    overflow-wrap: normal;
+}
+
+.profile__post--img {
+    height: 293px;
+    width: 293px;
+}
+
+
+.profile__post--info {
+    display: flex;
+    flex-direction: row;
+    padding: 4px;
+    text-decoration: none;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.profile__post--like {
+    margin: 0px 8px;
+    padding: 4px;
+}
+
+.profile__post--comment {
+    padding: 4px;
+    margin: 0px 12px;
+}
+
+.profile__link {
+    text-decoration: none;
+}
+
+.profile__heart--icon {
+    color: red;
+}
+

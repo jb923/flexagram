@@ -9,7 +9,7 @@ const postReducer = ( state = {}, action) => {
     switch(action.type) {
         case LOAD_FEED_POSTS:
             let newState = {};
-            action.list.result.forEach(post => newState[post.id] = post);
+            action.list.postList.forEach(post => newState[post.id] = post);
             return Object.assign(nextState, newState);
         case LOAD_POSTS:
             let newState1 = {};

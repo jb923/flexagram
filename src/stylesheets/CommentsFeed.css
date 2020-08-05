@@ -1,7 +1,7 @@
 .commentsFeed-container {
-    width: 614px;
+    width: 612px;
     height: 102px;
-    background-color: darkolivegreen;
+    /* background-color: darkolivegreen; */
 }
 
 .commentsFeed__comments {
@@ -13,7 +13,7 @@
 
 .addComments {
     height: 56px;
-    width: 614px;
+    width: 612px;
     margin: 4px 0px 0px;
     display: flex;
     flex-direction: row;
@@ -30,3 +30,4 @@
     border: none;
     background-color: #ffffff;;
 }
+
