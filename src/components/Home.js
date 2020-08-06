@@ -16,6 +16,7 @@ import { baseUrl } from "../config";
 const Home = (props) => {
     const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
     const [feedData, setfeedData] = useState("");
+    const [userInfo, setUserInfo] = useState("");
 
 
     useEffect(() => {
@@ -32,6 +33,14 @@ const Home = (props) => {
         }
     }, [userId]);
 
+    useEffect(() => {
+        (async () => {
+            const res = await fetch(`${baseUrl}/api/profileinfo/${userId}`);
+            const userInfo = await res.json();
+            setUserInfo(userInfo);
+        })();
+    }, [userId]);
+
     useEffect(() => {   
         (async () => {
             await props.fetchPosts();
@@ -41,7 +50,7 @@ const Home = (props) => {
 
     return (
         <>
-            <Navbar/>
+            <Navbar userInfo={userInfo} {...props}/>
             <Feed feedData={feedData} {...props}/>
             <Footer />
         </>

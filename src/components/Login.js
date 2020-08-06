@@ -16,7 +16,7 @@ const Login = (props) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         await props.login(email, password);
-        props.history.push("/");
+        props.history.push("/home");
     };
 
     const handleDemoUser = async (event) => {

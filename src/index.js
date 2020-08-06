@@ -9,6 +9,7 @@ import './stylesheets/Feed.css';
 import './stylesheets/CommentsFeed.css';
 import './stylesheets/Profile.css';
 import './stylesheets/LandingPage.css';
+import './stylesheets/Upload.css';
 
 
 const store = configureStore();

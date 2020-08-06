@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 
 import Home from "./components/Home";
@@ -10,50 +10,43 @@ import LandingPage from './components/LandingPage';
 import Signup from './components/Signup';
 import Post from './components/Post';
 
+import { ProtectedRoute} from './utils/routeUtils';
+import { loadToken } from './actions/sessionActions';
+import Upload from './components/Upload';
+
 
 
 const App = props => {
-    // useEffect(() => {
-    //     props.loadToken();
-    // });
+    useEffect(() => {
+        props.loadToken();
+    });
 
-    // useEffect(() => {
-    //     props.loadCart();
-    // });
 
-    // useEffect(() => {
-    //     (async () => {
-    //         await props.fetchProducts();
-    //     })();
-    // });
-
-    // useEffect(() => {
-    //     window.scrollTo(0, 0)
-    // }, [])
 
     return (
         <BrowserRouter>
-            <Route exact path="/" component={LandingPage}></Route>
-            <Route path="/home" component={Home} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/signup" component={Signup} />
-            {/* <Route path="/Post/:postId" component={Post} /> */}
+            <Switch>
+                <Route exact path="/" component={LandingPage} ></Route>
+                <Route path="/home" isLoggedIn={props.token} component={Home} />
+                <Route path="/profile/:userId" isLoggedIn={props.token} component={Profile} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/upload" component={Upload} />
+                {/* <Route path="/Post/:postId" component={Post} /> */}
+            </Switch>
         </BrowserRouter>
     );
 
 }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         loadToken: () => dispatch(loadToken()),
-//         loadCart: () => dispatch(loadCart()),
-//         fetchProducts: () => dispatch(fetchProducts())
-//     }
-// }
+const mapDispatchToProps = dispatch => {
+    return {
+        loadToken: () => dispatch(loadToken()),
+    }
+}
 
 export default connect(
     null,
-    // mapDispatchToProps
+    mapDispatchToProps
 )(
     App
 );

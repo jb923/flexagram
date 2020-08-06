@@ -48,7 +48,7 @@ const Profile = props => {
 
     return (
         <>
-            <Navbar />
+            <Navbar userInfo={UserInfo} {...props}/>
             <ProfileInfo userInfo={UserInfo} {...props}/>
             <ProfilePosts feedArray={FeedArray} />
         </>

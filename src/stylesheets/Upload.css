@@ -1,0 +1,13 @@
+/* .dropzone__container {
+    width: 500px;
+    height: 200px;
+    margin: 0 auto 0 auto;
+    margin-top: 100px;
+} */
+
+.upload__description {
+    margin: 15px auto 15px auto;
+    display: flex;
+    justify-content: center;
+}
+

@@ -10,7 +10,7 @@ const LandingPage = props => {
             <div className="landing__image">
                 <img className="login__image" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png" />
             </div>
-            <Login />
+            <Login {...props}/>
         </div>
         
 
