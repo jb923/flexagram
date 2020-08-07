@@ -40,8 +40,8 @@ const Upload = props => {
     }
 
 
-    const getUploadParams = async ({ meta: { object_name } }) => {
-        const res = await fetch(`${baseUrl}/api/aws/upload/${object_name}`);
+    const getUploadParams = async ({ meta: { name } }) => {
+        const res = await fetch(`${baseUrl}/api/aws/upload/${name}`);
         const { fields, url, fileUrl } = await res.json();
         setFileUrl(fileUrl);
         return { fields, meta: { fileUrl: fileUrl }, url: url }
@@ -75,7 +75,7 @@ const Upload = props => {
                 accept="image/*,audio/*,video/*"
                 inputContent={(files, extra) => (extra.reject ? "Cannot upload this file" : "Drag an image or click to select a file")}
                 styles={{
-                    dropzone: { border: "1px dotted rgba(0, 0, 0)", padding: "150px", margin: "100px auto 0px auto", width: "600px", height: "400px", textAlign: "center"},
+                    dropzone: { border: "1px dotted rgba(0, 0, 0)", padding: "150px", margin: "100px auto 0px auto", width: "600px", height: "400px", textAlign: "center", fontSize: "20px", backgroundColor: "#FFFFFF"},
                     dropzoneReject: { borderColor: "red", backgroundColor: "#FFCCCB", padding: "150px" },
                     dropzoneActive: { borderColor: "green", backgroundColor: "#ADD8E6", },
                     input: { display: "none" },

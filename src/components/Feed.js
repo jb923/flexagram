@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CommentsFeed from './CommentsFeed';
+import Like from './Like';
 
 import { baseUrl } from "../config";
 
@@ -11,6 +12,26 @@ const Feed = props => {
     const userName = window.localStorage.getItem("flexagram/authentication/username");
     if (props.feedData.length === 0) return null;
     const feedArr = Object.values(props.feedData.postList);
+    // const [comment, setComment] = useState("");
+
+
+    // const handleInput = event => {
+    //     setComment(event.target.value);
+    // }
+
+    // const handleSubmit = async (event) => {
+    //     event.preventDefault();
+    //     const options = {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify({ userId, postId: postId, userName, content: comment }),
+    //     }
+    //     const res = await fetch(`${baseUrl}/api/comments`, options);
+    //     if (res.ok) {
+    //         setComment("");
+    //     }
+    // }
+
 
 
     return (
@@ -26,16 +47,23 @@ const Feed = props => {
                                 <div className='image'><img src={post.postimgurl} alt="feed-img"/> </div>
                         </div>
                         <div className='icon-container'>
-                            <div className='icon__heart'>
+                            {/* <div className='icon__heart'>
                                 <FavoriteIcon className="icon__heart--icon" />
-                            </div>
+                            </div> */}
+                            <Like postId={post.id} {...props}/>
                             <div className='likes_num'>{post.LikesNum} likes</div>
                         </div>
-                        <div className='commentsFeed-container'>
-                            <Link to="/profile/:userId" className="comment__userLink"><div className='commentsFeed__user'>{post.user_info.username}</div></Link>
-                            <div className='commentsFeed__description'>{post.description}</div>
+                        <div className="comments__outer">
+                            <div className='personalPost-container'>
+                                <Link to="/profile/:userId" className="comment__userLink"><div className='commentsFeed__user'>{post.user_info.username}</div></Link>
+                                <div className='commentsFeed__description'>{post.description}</div>
+                            </div>
+                            <CommentsFeed postId={post.id} {...props}/>
                         </div>
-                        <CommentsFeed postId={post.id} {...props}/>
+                        {/* <form className='addComments'>
+                            <input type='text' className='form__comment' value={comment} onChange={handleInput} placeholder="Add a comment..."/>
+                            <button className='post__button' onClick={handleSubmit}>Post</button>
+                        </form> */}
                     </div>
                 )
             })}

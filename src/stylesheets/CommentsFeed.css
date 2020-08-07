@@ -1,18 +1,26 @@
+/* .comments__outer {
+    max-height: 88px;
+    background-color: orchid;
+    overflow-y: auto;
+} */
+
+.personalPost-container {
+    width: 612px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .commentsFeed-container {
     width: 612px;
-    height: 102px;
-    /* background-color: darkolivegreen; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.commentsFeed__comments {
-    width: 582px;
-    max-height: 36px;
-    padding: 0px 16px;
-    
-}
 
 .addComments {
-    height: 56px;
+    height: 42px;
     width: 612px;
     margin: 4px 0px 0px;
     display: flex;
@@ -21,8 +29,9 @@
 
 .form__comment {
     width: 551.66px;
-    padding: 0px 16px;
+    padding: 0px 8px;
     border: none;
+    /* background-color: orange; */
 }
 
 .post__button {

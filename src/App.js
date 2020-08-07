@@ -10,23 +10,25 @@ import LandingPage from './components/LandingPage';
 import Signup from './components/Signup';
 import Post from './components/Post';
 
-import { ProtectedRoute} from './utils/routeUtils';
+import { ProtectedRoute, AuthRoute} from './utils/routeUtils';
 import { loadToken } from './actions/sessionActions';
 import Upload from './components/Upload';
 
 
 
 const App = props => {
+    
+
     useEffect(() => {
         props.loadToken();
-    });
+    },[loadToken]);
 
 
 
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={LandingPage} ></Route>
+                <Route exact path="/" component={LandingPage} />
                 <Route path="/home" isLoggedIn={props.token} component={Home} />
                 <Route path="/profile/:userId" isLoggedIn={props.token} component={Profile} />
                 <Route path="/signup" component={Signup} />

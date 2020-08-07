@@ -41,7 +41,7 @@ const Signup = props => {
                 <input type="password" onChange={updatePassword} value={password} className="form__input" placeholder="Create a password" />
                 <input type="password" onChange={updateConfirmPassword} value={confirmPassword} className="form__input" placeholder="Confirm password" />
                 <button className="signupform__button">Join Flexagram</button>
-                <NavLink to='/login' className="signup__login">already flexing on them?</NavLink>
+                <NavLink to='/' className="signup__login">already flexing on them?</NavLink>
             </form>
         </div>
     );

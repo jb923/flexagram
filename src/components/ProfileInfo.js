@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { GrLogout } from "react-icons/gr"
+import { logout } from "../actions/sessionActions";
 
 
 const ProfileInfo = props => {
     if (!props.userInfo.user) return null;
     const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
     
-    
+
     return (
         <>
             <div className="profile__info--outer">
@@ -17,8 +18,8 @@ const ProfileInfo = props => {
                 <div className="profile__info">
                     <div className="profile__header">
                         <div className="profile__username">{props.userInfo.user.username}</div>
-                        <button className="profile__edit">Edit Profile</button>
-                        <GrLogout className="profile__logout" />
+                        {/* <button className="profile__edit">Edit Profile</button> */}
+                        <GrLogout className="profile__logout" onClick={props.logout} />
                     </div>
                     <div className="profile__details">
                         <div className="profile__mid profile__posts">{props.userInfo.postsNum} posts</div>
@@ -35,4 +36,15 @@ const ProfileInfo = props => {
     )
 }
 
-export default ProfileInfo;
+const mapDispatchToProps = dispatch => {
+    return {
+        logout: () => dispatch(logout()),
+    };
+};
+
+export default connect (
+    null,
+    mapDispatchToProps,
+)(
+    ProfileInfo
+);
