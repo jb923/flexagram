@@ -17,14 +17,12 @@ const Like = props => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ postId: postId, commentId: null }),
         }
-        const res = await fetch(`${baseUrl}/api/likes/${userId}`, options);
+        const res = await fetch(`${baseUrl}/api/like/${userId}`, options);
 
         if (res.status === 200) {
             const res = await fetch(`${baseUrl}/api/likes/${postId}`);
             const data = await res.json();
-            const LikesNum = data.LikesList.length
-            document.querySelector(`.post__numlikes${postId}`).innerHTML = `${LikesNum} likes`;
-            document.querySelector(`.post__like${postId}`).innerHTML = "";
+            const LikesNum = data.postLikes.length
         } else {
             setError("Post already liked!");
         }
@@ -33,9 +31,9 @@ const Like = props => {
         <>
             {/* <div className='icon-container'> */}
             <div className='icon__heart'>
-            <FavoriteIcon className="icon__heart--icon" onClick={handlePostLikes}/>
+            <FavoriteIcon className="icon__heart--icon" onDoubleClick={handlePostLikes}/>
             </div>
-                {/* <div className='likes_num'>{post.LikesNum} likes</div> */}
+                {/* <div className='likes_num'>{postId.LikesNum} likes</div> */}
             {/* </div> */}
         </>
     )
