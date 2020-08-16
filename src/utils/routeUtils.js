@@ -10,3 +10,4 @@ export const ProtectedRoute = props => {
 };
 
 
+export const AuthRoute = props => {}
