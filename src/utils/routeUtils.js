@@ -9,5 +9,12 @@ export const ProtectedRoute = props => {
   return <Route {...props} />
 };
 
-
-export const AuthRoute = props => {}
+// export const AuthRoute = ({ component: Component, path, exact }) => {
+// 	return (
+// 		<Route
+// 			path={path}
+// 			exact={exact}
+// 			render={(props) => (currentUserId ? <Redirect to='/' /> : <Component {...props} />)}
+// 		/>
+// 	);
+// };
