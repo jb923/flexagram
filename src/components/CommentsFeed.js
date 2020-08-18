@@ -34,6 +34,7 @@ const CommentsFeed = props => {
         const res = await fetch(`${baseUrl}/api/comments`, options);
         if (res.ok) {
             setComment("");
+            window.location.reload();
         }
     }
 

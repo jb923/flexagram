@@ -94,3 +94,7 @@ img {
 .commentsFeed__description {
     padding: 4px;
 }
+
+.comments__outer {
+    background-color: #ffffff;
+}

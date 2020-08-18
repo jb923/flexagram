@@ -15,13 +15,13 @@ const ProfilePosts = props => {
             {posts.map(post => {
                 return (
                     <div className="profile__post">
-                    <Link to={`/posts/${post.id}`} className="profile__link" >
+                    <div to={`/posts/${post.id}`} className="profile__link" >
                         <img className="profile__post--img" src={post.postimgurl} alt="post-img" />
                         <div className="profile__post--info">
                             <div className="profile__post--like"><FavoriteIcon className="profile__heart--icon" />{post.numLikes}</div>
                             <div className="profile__post--comment"><ChatBubbleIcon className="profile__comment--icon" />{post.numComments}</div>
                         </div>
-                    </Link>
+                    </div>
                 </div>
                 );
             })}

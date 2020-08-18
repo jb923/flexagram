@@ -30,7 +30,7 @@ const Signup = props => {
 
     return (
         <div className="signup__container">
-            <div className="signup__header">Flexagram</div>
+            <NavLink to='/' className="signup__header">Flexagram</NavLink>
             <p className="signup__p">Sign up to flex on your friends.....or your enemies.</p>
             <form className="form__container" onSubmit={handleSubmit}>
                 <div className="form__input-name-container">

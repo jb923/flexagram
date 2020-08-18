@@ -21,7 +21,7 @@ const App = props => {
 
     useEffect(() => {
         props.loadToken();
-    },[]);
+    },[loadToken]);
 
 
 
@@ -29,10 +29,10 @@ const App = props => {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={LandingPage} />
-                <ProtectedRoute path="/home" isLoggedIn={props.token} component={Home} />
-                <ProtectedRoute path="/profile/:userId" isLoggedIn={props.token} component={Profile} />
+                <Route path="/home" isLoggedIn={props.token} component={Home} />
+                <Route path="/profile/:userId" isLoggedIn={props.token} component={Profile} />
                 <Route path="/signup" component={Signup} />
-                <ProtectedRoute path="/upload" isLoggedIn={props.token} component={Upload} />
+                <Route path="/upload" isLoggedIn={props.token} component={Upload} />
                 {/* <Route path="/Post/:postId" component={Post} /> */}
             </Switch>
         </BrowserRouter>
