@@ -8,7 +8,7 @@ import { FiPlusSquare } from 'react-icons/fi';
 
 
 const Navbar = props => {
-    const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
+    // const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
 
     if (!props.userInfo.user) return null;
 

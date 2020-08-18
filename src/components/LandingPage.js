@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Login from "./Login";
+import Footer from "./Footer";
+
 
 const LandingPage = props => {
 
@@ -8,12 +9,11 @@ const LandingPage = props => {
     return (
         <div className="landing__page">
             <div className="landing__image">
-                <img className="login__image" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png" />
+                <img className="login__image" src={require("../assets/iphone.png")} alt="landing-img"/>
+                <img className="inner__image" src={require("../assets/greece.jpg")} alt="inner-landing"/>
             </div>
             <Login {...props}/>
         </div>
-        
-
     )
 }
 

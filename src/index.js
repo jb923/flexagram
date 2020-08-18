@@ -10,6 +10,7 @@ import './stylesheets/CommentsFeed.css';
 import './stylesheets/Profile.css';
 import './stylesheets/LandingPage.css';
 import './stylesheets/Upload.css';
+import './stylesheets/Footer.css';
 
 
 const store = configureStore();

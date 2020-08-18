@@ -1,0 +1,15 @@
+.footer__container {
+    padding: 8px;
+}
+
+.footer__github {
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__logo {
+    padding: 4px;
+}

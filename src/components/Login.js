@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { login } from "../actions/sessionActions";
+import Footer from "../components/Footer";
 
 import { baseUrl } from "../config";
 
@@ -37,6 +38,7 @@ const Login = (props) => {
                     <button className="login__buttons demo__button" onClick={handleDemoUser}>Demo User</button>
                 </form>
                 <NavLink to="/signup" className="login__signup">Don't have an account?</NavLink>
+                <Footer />
             </div>
         </>
     );

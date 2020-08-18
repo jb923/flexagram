@@ -1,6 +1,6 @@
 .landing__page {
     height: 100vh;
-    background-image: url("https://io.telkomuniversity.ac.id/wp-content/uploads/2015/03/Dubai-e1434096715956.jpg");
+    background-image: url("../assets/dubai.jpg");
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,7 +18,7 @@
 
 .login__container {
     width: 350px;
-    height: 339px;
+    height: 365px;
     background-color: #FFFFFF;
     padding: 10px 0px;
     display: flex;
@@ -114,4 +114,12 @@
     text-decoration: none;
     padding: 12px;
     color: #0095F6;   
+}
+
+.inner__image {
+    height: 435px;
+    width: 247px;
+    position: absolute;
+    margin-left: -307px;
+    margin-top: 96px;
 }
