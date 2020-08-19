@@ -28,6 +28,7 @@
     display: flex;
     flex-direction: row;
     /* background-color: #ffffff; */
+    /* margin-bottom: 16px; */
 }
 
 .form__comment {
@@ -45,3 +46,6 @@
     /* background-color: orange; */
 }
 
+/* .comments__outer {
+
+} */

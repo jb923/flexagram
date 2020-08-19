@@ -42,14 +42,16 @@ const CommentsFeed = props => {
 
     return (
         <>
-            {commentArr ? (commentArr.map(comment => {
-                return (
-                    <div className='commentsFeed-container' key={comment}>
-                        <div className='commentsFeed__user'>{comment.userName}</div>
-                        <div className='commentsFeed__comments'>{comment.content}</div>
-                    </div>
-                );
-            })) : null}
+            <div className="comments__outer">
+                {commentArr ? (commentArr.map(comment => {
+                    return (
+                        <div className='commentsFeed-container' key={comment}>
+                            <div className='commentsFeed__user'>{comment.userName}</div>
+                            <div className='commentsFeed__comments'>{comment.content}</div>
+                        </div>
+                    );
+                })) : null}
+            </div>
             <form className='addComments'>
                 <input type='text' className='form__comment' value={comment} onChange={handleInput} placeholder="Add a comment..."/>
                 <button className='post__button' onClick={handleSubmit}>Post</button>
