@@ -1,14 +1,14 @@
-import React from 'react';
-// import { connect } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { connect } from "react-redux";
 import { NavLink } from 'react-router-dom';
 // import { FaInstagram, FaRegQuestionCircle } from 'react-icons/fa';
 import { IoMdHome } from 'react-icons/io';
 import { FiPlusSquare } from 'react-icons/fi';
-// import Searchbar from './Searchbar'
+import { baseUrl } from "../config";
 
 
 const Navbar = props => {
-    // const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
+  const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
 
     if (!props.userInfo.user) return null;
 
@@ -30,7 +30,7 @@ const Navbar = props => {
             </NavLink>
           </div>
           <div className='nav-profile'>
-            <NavLink className='nav-icon' to={`/profile/:userId`}>
+            <NavLink className='nav-icon' to={`/profile/${userId}`}>
               <img src={props.userInfo.user.profileimgurl} alt="profile-pic"/>
             </NavLink>
             <NavLink to='/upload'><FiPlusSquare className='nav__upload'/></NavLink>
@@ -40,4 +40,16 @@ const Navbar = props => {
     )
   }
 
-  export default Navbar;
+  const mapStateToProps = state => {
+    return {
+        userId: state.session.id,
+        posts: state.posts,
+        token: state.session.token
+    };
+};
+
+export default connect(
+  mapStateToProps
+)(
+  Navbar
+);

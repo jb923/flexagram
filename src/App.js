@@ -25,14 +25,12 @@ const App = props => {
 
     return (
         <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={LandingPage} />
-                <Route path="/home" isLoggedIn={props.token} component={Home} />
-                <Route path="/profile" isLoggedIn={props.token} component={Profile} />
-                <Route path="/upload" isLoggedIn={props.token} component={Upload} />
-                <Route path="/signup" component={Signup} />
-                {/* <Route path="/Post/:postId" component={Post} /> */}
-            </Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/home" isLoggedIn={props.token} component={Home} />
+            <Route path="/profile/:userId" isLoggedIn={props.token} component={Profile} />
+            <Route path="/upload" isLoggedIn={props.token} component={Upload} />
+            <Route path="/signup" component={Signup} />
+            {/* <Route path="/Post/:postId" component={Post} /> */}
         </BrowserRouter>
     );
 

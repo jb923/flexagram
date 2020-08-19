@@ -19,17 +19,14 @@ const Feed = props => {
             {feedArr.reverse().map(post => {
                 return (
                     <div className="feed__container" key={post}>
-                        <div className="feed__user--container">
+                        <Link to={`/profile/${post.userId}`} className="feed__user--container">
                             <div className='feedUser__icon'> <img className='feed__userimg' src={post.user_info.profileimgurl} alt='user__img'/></div>
                             <div className='feedUser__user'>{post.user_info.username}</div>
-                        </div>
+                        </Link>
                         <div className='image-container'> 
                                 <div className='image'><img src={post.postimgurl} alt="feed-img"/> </div>
                         </div>
                         <div className='icon-container'>
-                            {/* <div className='icon__heart'>
-                                <FavoriteIcon className="icon__heart--icon" />
-                            </div> */}
                             <Like postId={post.id} {...props}/>
                             <div className={`likes_num${post.id} likes_num`}>{post.LikesNum} likes</div>
                         </div>

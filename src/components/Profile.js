@@ -17,7 +17,7 @@ const Profile = props => {
     const [FeedData, setFeedData] = useState("");
     const [FeedArray, setFeedArray] = useState("");
 
-    // const currentProfile = props.match.params.userId;
+    const currentProfile = props.match.params.userId;
  
     useEffect(() => {
         props.loadToken();
@@ -26,7 +26,7 @@ const Profile = props => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${baseUrl}/api/profileinfo/${userId}`);
+            const res = await fetch(`${baseUrl}/api/profileinfo/${currentProfile}`);
             const userInfo = await res.json();
             setUserInfo(userInfo);
             setFeedArray(userInfo.posts);
