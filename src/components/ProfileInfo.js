@@ -9,6 +9,23 @@ const ProfileInfo = props => {
     const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
     
 
+    // const handleLogout = async (event) => {
+    //     event.preventDefault();
+    //     await props.logout;
+    //     props.history.push("/")
+    // }
+
+    // const handleSubmit = async (event) => {
+    //     event.preventDefault();
+    //     if (password === confirmPassword) {
+    //         await props.createUser(name, username, email, password, confirmPassword);
+    //         // window.location.reload();
+    //         props.history.push("/")
+    //     } else {
+    //         alert("Passwords must match!");
+    //     }
+    // };
+
     return (
         <>
             <div className="profile__info--outer">

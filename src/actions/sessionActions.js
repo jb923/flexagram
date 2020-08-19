@@ -22,23 +22,34 @@ export const loadToken = () => (dispatch) => {
 };
 
 
-export const createUser = (name, email, password, username, bio, profileimgurl) => async dispatch => {
-    const response = await fetch(`${baseUrl}/api/users`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, username, password}),
-    });
+// export const createUser = (name, email, password, username, bio, profileimgurl) => async dispatch => {
+//     const response = await fetch(`${baseUrl}/api/users`, {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ name, email, username, password}),
+//     });
 
-    if (response.ok) {
-        const payload = await response.json();
-        window.localStorage.setItem(TOKEN_KEY, payload.access_token);
-        window.localStorage.setItem("flexagram/authentication/USER_ID", payload.user.id);
-        window.localStorage.setItem("flexagram/authentication/name", payload.user.name);
-        window.localStorage.setItem("flexagram/authentication/username", payload.user.username);
-        window.localStorage.setItem("flexagram/authentication/bio", payload.user.bio ? payload.user.bio : "");
-        window.localStorage.setItem("flexagram/authentication/profileimgurl", payload.user.profileimgurl);
-        dispatch(setToken(payload));
-    }
+//     if (response.ok) {
+//         const payload = await response.json();
+//         window.localStorage.setItem(TOKEN_KEY, payload.access_token);
+//         window.localStorage.setItem("flexagram/authentication/USER_ID", payload.user.id);
+//         window.localStorage.setItem("flexagram/authentication/name", payload.user.name);
+//         window.localStorage.setItem("flexagram/authentication/username", payload.user.username);
+//         window.localStorage.setItem("flexagram/authentication/bio", payload.user.bio ? payload.user.bio : "");
+//         window.localStorage.setItem("flexagram/authentication/profileimgurl", payload.user.profileimgurl);
+//         dispatch(setToken(payload));
+//     }
+// };
+
+export const createUser = (payload) => async dispatch => {
+    // const payload = await response.json();
+    window.localStorage.setItem(TOKEN_KEY, payload.access_token);
+    window.localStorage.setItem("elbows/authentication/USER_ID", payload.user.id);
+    window.localStorage.setItem("elbows/authentication/name", payload.user.name);
+    window.localStorage.setItem("elbows/authentication/username", payload.user.username);
+    window.localStorage.setItem("elbows/authentication/bio", payload.user.bio ? payload.user.bio : "");
+    window.localStorage.setItem("elbows/authentication/profilePicUrl", payload.user.profilePicUrl);
+    dispatch(setToken(payload));
 };
 
 export const login = (email, password) => async dispatch => {

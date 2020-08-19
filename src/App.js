@@ -30,7 +30,7 @@ const App = props => {
             <Switch>
                 <Route exact path="/" component={LandingPage} />
                 <Route path="/home" isLoggedIn={props.token} component={Home} />
-                <Route path="/profile/:userId" isLoggedIn={props.token} component={Profile} />
+                <Route path="/profile/:id" isLoggedIn={props.token} component={Profile} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/upload" isLoggedIn={props.token} component={Upload} />
                 {/* <Route path="/Post/:postId" component={Post} /> */}

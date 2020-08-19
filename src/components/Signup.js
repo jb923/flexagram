@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { createUser } from "../actions/sessionActions";
+import { baseUrl } from "../config";
 
 
 const Signup = props => {
@@ -18,15 +19,18 @@ const Signup = props => {
     const updatePassword = (event) => setPassword(event.target.value);
     const updateConfirmPassword = (event) => setConfirmPassword(event.target.value);
 
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (password === confirmPassword) {
-            await props.createUser(name, username, email, password, confirmPassword);
-            window.location.reload();
-        } else {
-            alert("Passwords must match!");
-        }
-    };
+
+        const response = await fetch(`${baseUrl}/api/users`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, username, email, bio: null, password, confirmPassword }),
+        });
+        const res = await response.json();
+        props.history.push("/")
+    }
 
     return (
         <div className="signup__container">
