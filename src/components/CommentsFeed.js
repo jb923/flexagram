@@ -34,7 +34,9 @@ const CommentsFeed = props => {
         const res = await fetch(`${baseUrl}/api/comments`, options);
         if (res.ok) {
             setComment("");
-            window.location.reload();
+            const res = await fetch(`${baseUrl}/api/comments/${postId}`);
+            const data = await res.json();
+            setCommentArr(data.comments);
         }
     }
 
