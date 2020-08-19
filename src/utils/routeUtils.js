@@ -8,4 +8,3 @@ export const ProtectedRoute = props => {
   }
   return <Route {...props} />
 };
-

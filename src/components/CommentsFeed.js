@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import { baseUrl } from "../config";
+
 
 const CommentsFeed = props => {
     const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
@@ -44,7 +44,7 @@ const CommentsFeed = props => {
         <>
             {commentArr ? (commentArr.map(comment => {
                 return (
-                    <div className='commentsFeed-container'>
+                    <div className='commentsFeed-container' key={comment}>
                         <div className='commentsFeed__user'>{comment.userName}</div>
                         <div className='commentsFeed__comments'>{comment.content}</div>
                     </div>

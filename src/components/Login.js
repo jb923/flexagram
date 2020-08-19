@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { login } from "../actions/sessionActions";
 import Footer from "../components/Footer";
 
-import { baseUrl } from "../config";
+// import { baseUrl } from "../config";
 
 const Login = (props) => {
     const [email, setEmail] = useState("");
@@ -37,7 +37,7 @@ const Login = (props) => {
                     <button className="login__buttons form__button" onClick={handleSubmit}>Log In</button>
                     <button className="login__buttons demo__button" onClick={handleDemoUser}>Demo User</button>
                 </form>
-                <NavLink to="/signup" className="login__signup">Don't have an account?</NavLink>
+                {/* <NavLink to="/signup" className="login__signup">Don't have an account?</NavLink> */}
                 <Footer />
             </div>
         </>

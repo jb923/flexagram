@@ -1,37 +1,17 @@
-import React,{ useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import CommentsFeed from './CommentsFeed';
 import Like from './Like';
 
-import { baseUrl } from "../config";
+// import { baseUrl } from "../config";
 
 const Feed = props => {
     const userId = window.localStorage.getItem("flexagram/authentication/USER_ID")
     const userName = window.localStorage.getItem("flexagram/authentication/username");
     if (props.feedData.length === 0) return null;
     const feedArr = Object.values(props.feedData.postList);
-    // const [comment, setComment] = useState("");
-
-
-    // const handleInput = event => {
-    //     setComment(event.target.value);
-    // }
-
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     const options = {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({ userId, postId: postId, userName, content: comment }),
-    //     }
-    //     const res = await fetch(`${baseUrl}/api/comments`, options);
-    //     if (res.ok) {
-    //         setComment("");
-    //     }
-    // }
-
+   
 
 
     return (
@@ -51,7 +31,7 @@ const Feed = props => {
                                 <FavoriteIcon className="icon__heart--icon" />
                             </div> */}
                             <Like postId={post.id} {...props}/>
-                            <div className='likes_num'>{post.LikesNum} likes</div>
+                            <div className={`likes_num${post.id} likes_num`}>{post.LikesNum} likes</div>
                         </div>
                         <div className="comments__outer">
                             <div className='personalPost-container'>

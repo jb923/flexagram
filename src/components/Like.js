@@ -28,7 +28,7 @@ const Like = props => {
             const res = await fetch(`${baseUrl}/api/likes/${postId}`);
             const data = await res.json();
             const LikesNum = data.postLikes.length;
-            window.location.reload();
+            document.querySelector(`.likes_num${postId}`).innerHTML = `${LikesNum} likes`;
         } else {
             setError("Post already liked!");
             setOpen(true);

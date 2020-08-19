@@ -9,22 +9,12 @@ const ProfileInfo = props => {
     const userId = window.localStorage.getItem("flexagram/authentication/USER_ID");
     
 
-    // const handleLogout = async (event) => {
-    //     event.preventDefault();
-    //     await props.logout;
-    //     props.history.push("/")
-    // }
+    const handleLogout = async (event) => {
+        event.preventDefault();
+        localStorage.removeItem("flexagram/authentication/token");
+        props.history.push("/");
+    }
 
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     if (password === confirmPassword) {
-    //         await props.createUser(name, username, email, password, confirmPassword);
-    //         // window.location.reload();
-    //         props.history.push("/")
-    //     } else {
-    //         alert("Passwords must match!");
-    //     }
-    // };
 
     return (
         <>
@@ -36,7 +26,7 @@ const ProfileInfo = props => {
                     <div className="profile__header">
                         <div className="profile__username">{props.userInfo.user.username}</div>
                         {/* <button className="profile__edit">Edit Profile</button> */}
-                        <GrLogout className="profile__logout" onClick={props.logout} />
+                        <GrLogout className="profile__logout" onClick={handleLogout} />
                     </div>
                     <div className="profile__details">
                         <div className="profile__mid profile__posts">{props.userInfo.postsNum} posts</div>

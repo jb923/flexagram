@@ -5,12 +5,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from "./components/Home";
 import Profile from "./components/Profile"
-import Login from "./components/Login"
 import LandingPage from './components/LandingPage';
 import Signup from './components/Signup';
-import Post from './components/Post';
 
-import { ProtectedRoute, AuthRoute} from './utils/routeUtils';
+// import { ProtectedRoute, AuthRoute} from './utils/routeUtils';
 import { loadToken } from './actions/sessionActions';
 import Upload from './components/Upload';
 
@@ -21,7 +19,7 @@ const App = props => {
 
     useEffect(() => {
         props.loadToken();
-    },[loadToken]);
+    },[]);
 
 
 
@@ -30,9 +28,9 @@ const App = props => {
             <Switch>
                 <Route exact path="/" component={LandingPage} />
                 <Route path="/home" isLoggedIn={props.token} component={Home} />
-                <Route path="/profile/:id" isLoggedIn={props.token} component={Profile} />
-                <Route path="/signup" component={Signup} />
+                <Route path="/profile" isLoggedIn={props.token} component={Profile} />
                 <Route path="/upload" isLoggedIn={props.token} component={Upload} />
+                <Route path="/signup" component={Signup} />
                 {/* <Route path="/Post/:postId" component={Post} /> */}
             </Switch>
         </BrowserRouter>

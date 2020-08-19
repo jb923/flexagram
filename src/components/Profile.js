@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { Redirect} from 'react-router-dom';
 
 import Navbar from './Navbar';
 import ProfileInfo from './ProfileInfo';
@@ -16,7 +17,7 @@ const Profile = props => {
     const [FeedData, setFeedData] = useState("");
     const [FeedArray, setFeedArray] = useState("");
 
-    const currentProfile = props.match.params.userId;
+    // const currentProfile = props.match.params.userId;
  
     useEffect(() => {
         props.loadToken();
@@ -45,20 +46,31 @@ const Profile = props => {
     
 
 
-
-    return (
-        <>
-            <Navbar userInfo={UserInfo} {...props}/>
-            <ProfileInfo userInfo={UserInfo} {...props}/>
-            <ProfilePosts feedArray={FeedArray} />
-        </>
-    )
+    if (!localStorage.getItem("flexagram/authentication/token")) {
+        return <Redirect to="/" />
+    } else {
+        return (
+            <>
+                <Navbar userInfo={UserInfo} {...props}/>
+                <ProfileInfo userInfo={UserInfo} {...props}/>
+                <ProfilePosts feedArray={FeedArray} />
+            </>
+        )
+    }
+    // return (
+    //     <>
+    //         <Navbar userInfo={UserInfo} {...props}/>
+    //         <ProfileInfo userInfo={UserInfo} {...props}/>
+    //         <ProfilePosts feedArray={FeedArray} />
+    //     </>
+    // )
 }
 
 const mapStateToProps = state => {
     return {
         userId: state.session.id,
         posts: state.posts,
+        token: state.session.token
     };
 };
 

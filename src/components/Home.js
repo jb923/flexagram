@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { connect } from "react-redux";
+import { Redirect} from 'react-router-dom';
 
 import Navbar from './Navbar';
-import CommentsFeed from './CommentsFeed';
-import Footer from "./Footer";
-
 import Feed from "./Feed";
 
 import { loadToken } from "../actions/sessionActions";
@@ -21,7 +19,7 @@ const Home = (props) => {
 
     useEffect(() => {
         props.loadToken();
-    });
+    },[loadToken]);
 
     useEffect(() => {
         if (userId) {
@@ -47,20 +45,31 @@ const Home = (props) => {
         })();
     }, []);
 
-
-    return (
-        <>
-            <Navbar userInfo={userInfo} {...props}/>
-            <Feed feedData={feedData} {...props}/>
-            {/* <Footer /> */}
-        </>
-    )
+    if (!localStorage.getItem("flexagram/authentication/token")) {
+        return <Redirect to="/" />
+    } else {
+        return (
+            <>
+                <Navbar userInfo={userInfo} {...props}/>
+                <Feed feedData={feedData} {...props}/>
+                {/* <Footer /> */}
+            </>
+        )
+    }
+    // return (
+    //     <>
+    //         <Navbar userInfo={userInfo} {...props}/>
+    //         <Feed feedData={feedData} {...props}/>
+    //         {/* <Footer /> */}
+    //     </>
+    // )
 }
 
 const mapStateToProps = state => {
     return {
         userId: state.session.id,
         posts: state.posts,
+        token: state.session.token
     };
 };
 

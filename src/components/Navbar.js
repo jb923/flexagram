@@ -31,7 +31,7 @@ const Navbar = props => {
           </div>
           <div className='nav-profile'>
             <NavLink className='nav-icon' to={`/profile/:userId`}>
-              <img src={props.userInfo.user.profileimgurl}/>
+              <img src={props.userInfo.user.profileimgurl} alt="profile-pic"/>
             </NavLink>
             <NavLink to='/upload'><FiPlusSquare className='nav__upload'/></NavLink>
           </div>
