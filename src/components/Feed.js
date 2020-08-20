@@ -18,7 +18,7 @@ const Feed = props => {
         <div className ="feedArr--container">
             {feedArr.reverse().map(post => {
                 return (
-                    <div className="feed__container" key={post}>
+                    <div className="feed__container">
                         <Link to={`/profile/${post.userId}`} className="feed__user--container">
                             <div className='feedUser__icon'> <img className='feed__userimg' src={post.user_info.profileimgurl} alt='user__img'/></div>
                             <div className='feedUser__user'>{post.user_info.username}</div>
@@ -32,7 +32,7 @@ const Feed = props => {
                         </div>
                         <div className="comments__outer">
                             <div className='personalPost-container'>
-                                <Link to="/profile/:userId" className="comment__userLink"><div className='commentsFeed__user'>{post.user_info.username}</div></Link>
+                                <Link to={`/profile/${post.userId}`} className="comment__userLink"><div className='commentsFeed__user'>{post.user_info.username}</div></Link>
                                 <div className='commentsFeed__description'>{post.description}</div>
                             </div>
                             <CommentsFeed postId={post.id} {...props}/>
