@@ -4,7 +4,7 @@
 
 Flexagram is a full-stack social media platform where you can share, like and comment photos with your friends.
 
-*Note: This is demo, and is still in production.*
+*Note: This is a demo, and is still in production.*
 
 ## Latest Release
 
