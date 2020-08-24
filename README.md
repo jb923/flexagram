@@ -1,4 +1,4 @@
-# ***<img src='./src/assets/logo.png' width='30px'/> Flexagram***
+# ***<img src='./src/assets/logo.jpg' width='30px'/> Flexagram***
 
 ## Flexagram, a social media platform!
 
