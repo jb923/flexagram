@@ -49,12 +49,9 @@ const Like = props => {
 
     return (
         <>
-            {/* <div className='icon-container'> */}
             <div className='icon__heart'>
             <FavoriteIcon className="icon__heart--icon" onDoubleClick={handlePostLikes}/>
             </div>
-                {/* <div className='likes_num'>{postId.LikesNum} likes</div> */}
-            {/* </div> */}
             <Snackbar
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
                 open={open}

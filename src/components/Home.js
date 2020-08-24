@@ -52,7 +52,6 @@ const Home = (props) => {
             <>
                 <Navbar userInfo={userInfo} {...props}/>
                 <Feed feedData={feedData} {...props}/>
-                {/* <Footer /> */}
             </>
         )
     }

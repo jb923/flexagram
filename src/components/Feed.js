@@ -4,11 +4,8 @@ import { connect } from "react-redux";
 import CommentsFeed from './CommentsFeed';
 import Like from './Like';
 
-// import { baseUrl } from "../config";
 
 const Feed = props => {
-    const userId = window.localStorage.getItem("flexagram/authentication/USER_ID")
-    const userName = window.localStorage.getItem("flexagram/authentication/username");
     if (props.feedData.length === 0) return null;
     const feedArr = Object.values(props.feedData.postList);
    
@@ -37,10 +34,6 @@ const Feed = props => {
                             </div>
                             <CommentsFeed postId={post.id} {...props}/>
                         </div>
-                        {/* <form className='addComments'>
-                            <input type='text' className='form__comment' value={comment} onChange={handleInput} placeholder="Add a comment..."/>
-                            <button className='post__button' onClick={handleSubmit}>Post</button>
-                        </form> */}
                     </div>
                 )
             })}

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-// import { NavLink } from "react-router-dom";
 import { login } from "../actions/sessionActions";
 import Footer from "../components/Footer";
 

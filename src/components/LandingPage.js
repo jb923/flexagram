@@ -13,11 +13,6 @@ const LandingPage = props => {
                 <img className="inner__image" src={require("../assets/umbrella.jpg")} alt="inner-landing"/>
             </div>
             <Login {...props}/>
-            {/* <div className="demo2__container">
-                <p>Example Login: </p>
-                <p>email: ceejayduhh@ceejayduhh.com</p>
-                <p>pw: ceejayduhh</p>
-            </div> */}
         </div>
     )
 }

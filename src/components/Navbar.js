@@ -15,9 +15,6 @@ const Navbar = props => {
     return (
       <section className='nav-bar-container'>
         <div className='nav-left'>
-        {/* <NavLink className='nav-link-icon' to={`/`}>
-          <img src={require("../assets/icon.jpeg")} />
-        </NavLink> */}
         <NavLink className='nav-link-logo' to='/home'>Flexagram</NavLink>
         </div>
         <div className='nav-middle'>
