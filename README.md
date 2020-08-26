@@ -16,8 +16,21 @@ Flexagram is a full-stack social media platform where you can share, like and co
 - Upload images to an AWS S3 bucket.
 - Fluid display of likes, comments and posts without having to reload the page.
 
-## Code Highlights
-
+## Technologies Used
+    - Frontend
+        - React
+        - Javascript
+        - Redux
+        - Material UI - React Components
+        - React-dropzone
+    -Backend
+        - Flask
+        - Python
+        - Postgres
+        - SQLAlchemy
+        - Alembic
+        - AWS S3
+        - Heroku deployment via Docker
 
 ## Troubleshooting
 
