@@ -11,7 +11,7 @@ Flexagram is a full-stack social media platform where you can share, like and co
 *Flexagram can be found at [https://flexagram.herokuapp.com/](https://flexagram.herokuapp.com/).*
 
 
-## Features
+## MVP Features
 - A reverse chronological data feed that renders the latests posts first.
 - Upload images to an AWS S3 bucket.
 - Fluid display of likes, comments and posts without having to reload the page.
@@ -36,7 +36,7 @@ Flexagram is a full-stack social media platform where you can share, like and co
 
 
 ## Database Schema
-
+<img src='flexagram-schema.png'>
 
 ## Created By 
 - [Johnny Bui](https://github.com/JBui923)
