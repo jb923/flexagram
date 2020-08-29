@@ -11,11 +11,6 @@ Flexagram is a full-stack social media platform where you can share, like and co
 *Flexagram can be found at [https://flexagram.herokuapp.com/](https://flexagram.herokuapp.com/).*
 
 
-## MVP Features
-- A reverse chronological data feed that renders the latests posts first.
-- Upload images to an AWS S3 bucket.
-- Fluid display of likes, comments and posts without having to reload the page.
-
 ## Technologies Used
     - Frontend
         - React
@@ -32,11 +27,26 @@ Flexagram is a full-stack social media platform where you can share, like and co
         - AWS S3
         - Heroku deployment via Docker
 
-## Troubleshooting
+
+## MVP Features
+- A reverse chronological data feed that renders the latests posts first.
+- Upload images to an AWS S3 bucket.
+- Fluid display of likes, comments and posts without having to reload the page.
+
+
+## Bonus/Stretch Goals
+- Add search bar
+- Add explore page
+- Add follow user feature
+- Add edit profile page
+
 
 
 ## Database Schema
 <img src='flexagram-schema.png'>
+
+## Conclusion
+Flexagram was a bit of a challenge using AWS S3 bucket and react-dropzone to upload images. It was a struggle to figure out how that connected. After reading around and asking others it finally worked and becomes one of the biggest core features of the project. Although Flexagram is far from complete it is a MVP, that I look forward to working on even futher in the future.
 
 ## Created By 
 - [Johnny Bui](https://github.com/JBui923)
