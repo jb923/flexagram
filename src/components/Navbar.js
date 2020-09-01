@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
 import { NavLink } from 'react-router-dom';
-// import { FaInstagram, FaRegQuestionCircle } from 'react-icons/fa';
 import { IoMdHome } from 'react-icons/io';
 import { FiPlusSquare } from 'react-icons/fi';
-import { baseUrl } from "../config";
+// import { baseUrl } from "../config";
 
 
 const Navbar = props => {

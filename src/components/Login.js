@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { login } from "../actions/sessionActions";
 import Footer from "../components/Footer";
 
-// import { baseUrl } from "../config";
 
 const Login = (props) => {
     const [email, setEmail] = useState("");
