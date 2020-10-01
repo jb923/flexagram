@@ -35,7 +35,7 @@ const Login = (props) => {
                     <button className="login__buttons form__button" onClick={handleSubmit}>Log In</button>
                     <button className="login__buttons demo__button" onClick={handleDemoUser}>Demo User</button>
                 </form>
-                {/* <NavLink to="/signup" className="login__signup">Don't have an account?</NavLink> */}
+                <NavLink to="/signup" className="login__signup">Don't have an account?</NavLink>
                 <Footer />
             </div>
         </>
