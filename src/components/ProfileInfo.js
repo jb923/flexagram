@@ -25,7 +25,7 @@ const ProfileInfo = props => {
                 <div className="profile__info">
                     <div className="profile__header">
                         <div className="profile__username">{props.userInfo.user.username}</div>
-                        {/* <button className="profile__edit">Edit Profile</button> */}
+                        <button className="profile__edit">Edit Profile</button>
                         <GrLogout className="profile__logout" onClick={handleLogout} />
                     </div>
                     <div className="profile__details">
